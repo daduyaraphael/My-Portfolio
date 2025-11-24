@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="Skills.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="nav">
+        <img class="logo" src="image/Logo-removebg-preview.png" alt="">
+        <a href="Home.html"><p class="dest">Home</p></a>
+        <a href="Me.html"><p class="dest">About Me</p></a>
+        <a href="Prelim.html"><p class="dest">Projects</p></a>
+        <a href="Contacts.html"><p class="dest">Contacts</p></a>
+        <p class="main">Skills</p>
+    </div>
+
+    <div class="skills-container">
+    <div class="skills-left">
+        <h2>My Skills</h2>
+
+        <!-- Web Development -->
+        <div class="skill-group">
+            <h3>Web Development</h3>
+
+            <div class="skill">
+                <span>C</span>
+                <div class="bar"><div style="width: 60%;"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>C++</span>
+                <div class="bar"><div style="width: 55%;"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Java</span>
+                <div class="bar"><div style="width: 65%;"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>HTML</span>
+                <div class="bar"><div style="width: 90%;"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>CSS</span>
+                <div class="bar"><div style="width: 85%;"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>JavaScript</span>
+                <div class="bar"><div style="width: 70%;"></div></div>
+            </div>
+        </div>
+
+        <!-- UI/UX -->
+        <div class="skill-group">
+            <h3>UI / UX Design</h3>
+
+            <div class="skill">
+                <span>Canva</span>
+                <div class="bar"><div style="width: 95%;"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Figma</span>
+                <div class="bar"><div style="width: 75%;"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Adobe</span>
+                <div class="bar"><div style="width: 60%;"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills-right">
+        <canvas id="skillChart"></canvas>
+    </div>
+</div>
+
+<script>
+    const ctx = document.getElementById('skillChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['C', 'C++', 'Java', 'HTML', 'CSS', 'JavaScript', 'Canva', 'Figma', 'Adobe'],
+            datasets: [{
+                label: 'Skill Level',
+                data: [60, 55, 65, 90, 85, 70, 95, 75, 60],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                    ticks: { display: false },
+                    angleLines: { display: false }
+                }
+            }
+        }
+    });
+</script>
+
+
+</body>
+</html>
